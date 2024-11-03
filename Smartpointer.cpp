@@ -84,6 +84,7 @@ int main()
 		validAction(playerMovingTowards);
 	}
 
+	winorLose(playerMovingTowards);
 	return 0;
 }
 
@@ -278,5 +279,10 @@ void winorLose(int playersMove) {
 	{
 		SetConsoleTextAttribute(h, 4);
 		cout << "you run for the door  the monsters right behind you Jumps to Catch you. you were never heard from again" << endl;
+	}
+	else if (playersLives <= 0)
+	{
+		SetConsoleTextAttribute(h, 4);
+		cout << "you run for the door It was Locked! the monsters right behind you Jumps to Catch you. you were never heard from again" << endl;
 	}
 }
