@@ -34,7 +34,7 @@ void winorLose(int playersMove);
 // this is use to check whether the monster knows where you are
 int monsterSense;
 // this is for holding the key
-int playersPocket;
+int playersPocket = 10;
 // this is the key varible that can point to the player or the monster
 int key;
 // this is for the players movement
@@ -85,7 +85,7 @@ int main()
 	}
 
 	winorLose(playerMovingTowards);
-	return 0;
+
 }
 
 //this places the key at a random area That is not 5 or 7 which are win/lose states if you collect the key
@@ -216,6 +216,8 @@ void movingPlayer(int playersMove)
 			if (playersLives <= 0)
 			{
 				isGameOver = true;
+				
+				return;
 			}
 			//else it just attacks you
 			else if (playersLives > 0)
